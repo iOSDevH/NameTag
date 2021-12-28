@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D3D7150277BB083002BF650 /* EditContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D714F277BB083002BF650 /* EditContactView.swift */; };
 		8D8E1ED6277A666A00B811DB /* NameTagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E1ED5277A666A00B811DB /* NameTagApp.swift */; };
 		8D8E1ED8277A666A00B811DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E1ED7277A666A00B811DB /* ContentView.swift */; };
 		8D8E1EDA277A666B00B811DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E1ED9277A666B00B811DB /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D3D714F277BB083002BF650 /* EditContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactView.swift; sourceTree = "<group>"; };
 		8D8E1ED2277A666A00B811DB /* NameTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8E1ED5277A666A00B811DB /* NameTagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTagApp.swift; sourceTree = "<group>"; };
 		8D8E1ED7277A666A00B811DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 				8D8E1EF7277A7F4F00B811DB /* ImagePicker.swift */,
 				8D8E1ED7277A666A00B811DB /* ContentView.swift */,
 				8D8E1F02277ABE0700B811DB /* AddContactView.swift */,
+				8D3D714F277BB083002BF650 /* EditContactView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				8D8E1EFC277A7FE800B811DB /* FileManager-DocumentsDirectory.swift in Sources */,
 				8D8E1EF6277A7CA800B811DB /* Contact.swift in Sources */,
+				8D3D7150277BB083002BF650 /* EditContactView.swift in Sources */,
 				8D8E1EF9277A7F4F00B811DB /* ImagePicker.swift in Sources */,
 				8D8E1F01277A859700B811DB /* NameTagError.swift in Sources */,
 				8D8E1ED8277A666A00B811DB /* ContentView.swift in Sources */,
