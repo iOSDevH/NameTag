@@ -29,17 +29,16 @@ struct ContentView: View {
             }
             .navigationTitle("Name Tag")
             .toolbar {
-                Button {
-                    contactsVM.showImagePicker = true
+                NavigationLink {
+                    AddContactView()
                 } label: {
                     Image(systemName: "plus")
                 }
             }
-            .sheet(isPresented: $contactsVM.showImagePicker) {
-                ImagePicker(image: $selectedImage)
-            }
-            .sheet(isPresented: $contactsVM.showAddContact) {
-                AddContactView(selectedImage: $selectedImage)
+            .task {
+                if FileManager().documentExists(named: fileName) {
+                    try? contactsVM.loadImagesJSONFile()
+                }
             }
         }
     }
