@@ -13,12 +13,12 @@ struct EditContactView: View {
     
     var selectedContact: Contact
     
+    @State var selectedImage: UIImage?
+    @State var name: String
+    
     var body: some View {
         VStack{
-            Image(uiImage: selectedContact.image)
-                .resizable()
-                .scaledToFit()
-            Text(selectedContact.name)
+            DetailViewComponent(selectedImage: .constant(selectedContact.image), name: $name)
             
             Spacer()
             
@@ -45,6 +45,6 @@ struct EditContactView: View {
 
 struct EditContactView_Previews: PreviewProvider {
     static var previews: some View {
-        EditContactView(selectedContact: Contacts.example)
+        EditContactView(selectedContact: Contacts.example, name: Contacts.example.name)
     }
 }

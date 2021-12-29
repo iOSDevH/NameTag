@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D041907277C2CA5008236B8 /* DetailViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D041906277C2CA5008236B8 /* DetailViewComponent.swift */; };
 		8D3D7150277BB083002BF650 /* EditContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D714F277BB083002BF650 /* EditContactView.swift */; };
 		8D8E1ED6277A666A00B811DB /* NameTagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E1ED5277A666A00B811DB /* NameTagApp.swift */; };
 		8D8E1ED8277A666A00B811DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E1ED7277A666A00B811DB /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D041906277C2CA5008236B8 /* DetailViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewComponent.swift; sourceTree = "<group>"; };
 		8D3D714F277BB083002BF650 /* EditContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactView.swift; sourceTree = "<group>"; };
 		8D8E1ED2277A666A00B811DB /* NameTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8E1ED5277A666A00B811DB /* NameTagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTagApp.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				8D8E1ED7277A666A00B811DB /* ContentView.swift */,
 				8D8E1F02277ABE0700B811DB /* AddContactView.swift */,
 				8D3D714F277BB083002BF650 /* EditContactView.swift */,
+				8D041906277C2CA5008236B8 /* DetailViewComponent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8E1EFC277A7FE800B811DB /* FileManager-DocumentsDirectory.swift in Sources */,
+				8D041907277C2CA5008236B8 /* DetailViewComponent.swift in Sources */,
 				8D8E1EF6277A7CA800B811DB /* Contact.swift in Sources */,
 				8D3D7150277BB083002BF650 /* EditContactView.swift in Sources */,
 				8D8E1EF9277A7F4F00B811DB /* ImagePicker.swift in Sources */,

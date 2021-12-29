@@ -16,7 +16,7 @@ struct ContentView: View {
             List {
                 ForEach(contactsVM.items.sorted(), id: \.id) { contact in
                     NavigationLink {
-                        EditContactView(selectedContact: contact)
+                        EditContactView(selectedContact: contact, name: contact.name)
                     } label: {
                         HStack {
                             Image(uiImage: contact.image)

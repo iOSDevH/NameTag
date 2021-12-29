@@ -12,17 +12,10 @@ struct AddContactView: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var selectedImage: UIImage?
-    
     @State private var name = ""
     
     var body: some View {
-        VStack {
-            contactsVM.image?
-                .resizable()
-                .scaledToFit()
-            
-            TextField("Name", text: $name)
-        }
+        DetailViewComponent(selectedImage: $selectedImage, name: $name)
         .toolbar {
             Button {
                 try? contactsVM.addContact(name: name, image: selectedImage!)
