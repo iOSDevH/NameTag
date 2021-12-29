@@ -15,8 +15,12 @@ class Contacts: ObservableObject {
     @Published var showImagePicker = false
     @Published var image: Image? = nil
     
+    var sortedItems: [Contact] {
+        items.sorted()
+    }
+    
     init() {
-        //print(FileManager.documentsDirectory.path)
+        print(FileManager.documentsDirectory.path)
         items = []
     }
     
@@ -51,8 +55,10 @@ class Contacts: ObservableObject {
     
     func removeContacts(at offset: IndexSet) {
         for i in offset {
-            let contact = items[i]
-            removeContact(contact)
+            if let index = items.firstIndex(where: { $0 == sortedItems[i] }) {
+                let contact = items[index]
+                removeContact(contact)
+            }
         }
     }
     

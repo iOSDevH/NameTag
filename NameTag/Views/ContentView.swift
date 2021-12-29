@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(contactsVM.items.sorted(), id: \.id) { contact in
+                ForEach(contactsVM.sortedItems, id: \.id) { contact in
                     NavigationLink {
                         EditContactView(selectedContact: contact, name: contact.name)
                     } label: {
