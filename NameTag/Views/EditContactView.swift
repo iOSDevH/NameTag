@@ -36,7 +36,7 @@ struct EditContactView: View {
                     //update contact
                     dismiss()
                 } label: {
-                    Text("Save")
+                    Text("Update")
                 }
             }
         }

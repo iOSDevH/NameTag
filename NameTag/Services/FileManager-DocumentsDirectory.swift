@@ -52,8 +52,8 @@ extension FileManager {
     }
     
     func deleteImage(_ id: String) throws {
-       let imageURL = FileManager.documentsDirectory.appendingPathComponent("\(id).jpg")
-        try? FileManager().removeItem(atPath: String(contentsOf: imageURL))
+        let imageURL = FileManager.documentsDirectory.appendingPathComponent("\(id).jpg")
+        try? FileManager().removeItem(atPath: imageURL.path)
     }
     
     func readImage(with id: UUID) throws -> UIImage {
