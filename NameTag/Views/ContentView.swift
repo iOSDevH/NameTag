@@ -23,6 +23,8 @@ struct ContentView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .overlay(.red, in: Circle().stroke(lineWidth: 2))
                             
                             Text(contact.name)
                         }

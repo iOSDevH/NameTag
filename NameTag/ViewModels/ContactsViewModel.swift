@@ -35,6 +35,7 @@ class Contacts: ObservableObject {
             try FileManager().saveImage(newContact.id.uuidString, image: image)
             items.append(newContact)
             try saveContactsJSONFile()
+            self.image = nil
         } catch {
             throw NameTagError.saveError
         }
