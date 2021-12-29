@@ -15,7 +15,11 @@ struct AddContactView: View {
     @State private var name = ""
     
     var body: some View {
-        DetailViewComponent(selectedImage: $selectedImage, name: $name)
+        VStack {
+            DetailViewComponent(selectedImage: $selectedImage, name: $name)
+            
+            Spacer()
+        }
         .toolbar {
             Button {
                 try? contactsVM.addContact(name: name, image: selectedImage!)

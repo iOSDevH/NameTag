@@ -16,9 +16,12 @@ struct DetailViewComponent: View {
             Image(uiImage: selectedImage ?? UIImage())
                 .resizable()
                 .scaledToFit()
+                .frame(maxHeight: 300)
             
             TextField("Name", text: $name)
+                .padding(.horizontal)
         }
+        .padding()
     }
 }
 
