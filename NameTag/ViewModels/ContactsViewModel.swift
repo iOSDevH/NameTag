@@ -13,7 +13,6 @@ class Contacts: ObservableObject {
     
     @Published var showAddContact = false
     @Published var showImagePicker = false
-    //@Published var selectedImage: UIImage? = nil
     @Published var image: Image? = nil
     
     init() {
@@ -37,6 +36,21 @@ class Contacts: ObservableObject {
             try saveContactsJSONFile()
         } catch {
             throw NameTagError.saveError
+        }
+    }
+    
+    func removeContact(_ contact: Contact) {
+        if let index = items.firstIndex(of: contact) {
+            try? FileManager().deleteImage(contact.id.uuidString)
+            items.remove(at: index)
+            try? saveContactsJSONFile()
+        }
+    }
+    
+    func removeContacts(at offset: IndexSet) {
+        for i in offset {
+            let contact = items[i]
+            removeContact(contact)
         }
     }
     

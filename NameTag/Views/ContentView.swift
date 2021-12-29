@@ -13,19 +13,22 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(contactsVM.items, id: \.id) { contact in
-                NavigationLink {
-                    EditContactView(selectedContact: contact)
-                } label: {
-                    HStack {
-                        Image(uiImage: contact.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 80, height: 80)
-                        
-                        Text(contact.name)
+            List {
+                ForEach(contactsVM.items.sorted(), id: \.id) { contact in
+                    NavigationLink {
+                        EditContactView(selectedContact: contact)
+                    } label: {
+                        HStack {
+                            Image(uiImage: contact.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 80)
+                            
+                            Text(contact.name)
+                        }
                     }
                 }
+                .onDelete(perform: contactsVM.removeContacts)
             }
             .navigationTitle("Name Tag")
             .toolbar {

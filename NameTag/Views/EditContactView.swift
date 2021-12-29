@@ -19,6 +19,26 @@ struct EditContactView: View {
                 .resizable()
                 .scaledToFit()
             Text(selectedContact.name)
+            
+            Spacer()
+            
+            Button {
+                contactsVM.removeContact(selectedContact)
+                dismiss()
+            } label: {
+                Text("Delete")
+                    .foregroundColor(.red)
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    //update contact
+                    dismiss()
+                } label: {
+                    Text("Save")
+                }
+            }
         }
     }
 }

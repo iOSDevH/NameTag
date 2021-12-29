@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Contact: Identifiable, Codable {
+struct Contact: Identifiable, Comparable, Codable {
     var id = UUID()
     var name: String
     
@@ -17,5 +17,9 @@ struct Contact: Identifiable, Codable {
         } catch {
             return UIImage(systemName: "photo.fill")!
         }
+    }
+    
+    static func <(lhs: Contact, rhs: Contact) -> Bool {
+        lhs.name < rhs.name
     }
 }
