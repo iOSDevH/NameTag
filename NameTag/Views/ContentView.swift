@@ -32,6 +32,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: contactsVM.removeContacts)
             }
+            .listStyle(.plain)
             .navigationTitle("Name Tag")
             .toolbar {
                 NavigationLink {

@@ -30,6 +30,7 @@ struct EditContactView: View {
                     .foregroundColor(.red)
             }
         }
+        .padding()
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {

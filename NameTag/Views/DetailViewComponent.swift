@@ -20,6 +20,10 @@ struct DetailViewComponent: View {
             
             TextField("Name", text: $name)
                 .padding(.horizontal)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke(Color.blue, lineWidth: 2)
+                )
         }
         .padding()
     }

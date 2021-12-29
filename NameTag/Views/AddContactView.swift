@@ -20,6 +20,7 @@ struct AddContactView: View {
             
             Spacer()
         }
+        .padding()
         .toolbar {
             Button {
                 try? contactsVM.addContact(name: name, image: selectedImage!)
