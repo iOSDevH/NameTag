@@ -16,7 +16,7 @@ class Contacts: ObservableObject {
     @Published var image: Image? = nil
     
     init() {
-        print(FileManager.documentsDirectory.path)
+        //print(FileManager.documentsDirectory.path)
         items = []
     }
     
