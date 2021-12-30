@@ -34,7 +34,7 @@ struct DetailViewComponent: View {
                     Map(coordinateRegion: $detailsVM.mapRegion, annotationItems: [location!]) { location in
                         MapAnnotation(coordinate: location.coordinate) {
                             VStack {
-                                Image(systemName: "star.circle")
+                                Image(systemName: "person.2.circle.fill")
                                     .resizable()
                                     .foregroundColor(.red)
                                     .frame(width: 44, height: 44)
@@ -50,6 +50,9 @@ struct DetailViewComponent: View {
                 location = detailsVM.getUserLocation()
                 detailsVM.updateMapRegion(location: location)
             }
+        }
+        .onAppear {
+            detailsVM.updateMapRegion(location: location)
         }
         .padding()
     }

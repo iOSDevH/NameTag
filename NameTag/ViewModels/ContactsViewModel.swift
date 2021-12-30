@@ -45,6 +45,19 @@ class Contacts: ObservableObject {
         }
     }
     
+    func updateContact(_ contact: Contact, name: String, location: Location?) throws {
+        if let index = items.firstIndex(of: contact) {
+            items[index].name = name
+            items[index].location = location
+            do {
+                try saveContactsJSONFile()
+                self.image = nil
+            } catch {
+                throw NameTagError.saveError
+            }
+        }
+    }
+    
     func removeContact(_ contact: Contact) {
         if let index = items.firstIndex(of: contact) {
             try? FileManager().deleteImage(contact.id.uuidString)

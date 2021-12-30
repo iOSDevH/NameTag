@@ -35,7 +35,7 @@ struct EditContactView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    //update contact
+                    try? contactsVM.updateContact(selectedContact, name: name, location: location)
                     dismiss()
                 } label: {
                     Text("Update")

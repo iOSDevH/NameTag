@@ -12,7 +12,7 @@ import MapKit
 @MainActor class Details: ObservableObject {
     let locationFetcher = LocationFetcher()
     
-    @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
+    @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 2.5, longitudeDelta: 2.5))
     
     func getUserLocation() -> Location? {
         self.locationFetcher.start()
@@ -26,9 +26,9 @@ import MapKit
     
     func updateMapRegion(location: Location?) {
         if let location = location {
-            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
+            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 2.5, longitudeDelta: 2.5))
         } else {
-            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
+            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 2.5, longitudeDelta: 2.5))
         }
         
     }
