@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8D041907277C2CA5008236B8 /* DetailViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D041906277C2CA5008236B8 /* DetailViewComponent.swift */; };
+		8D15C0B8277D68FB000E7ED1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D15C0B7277D68FB000E7ED1 /* Location.swift */; };
+		8D15C0BA277D6D3D000E7ED1 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D15C0B9277D6D3D000E7ED1 /* LocationFetcher.swift */; };
+		8D15C0BC277D6D71000E7ED1 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D15C0BB277D6D71000E7ED1 /* DetailsViewModel.swift */; };
 		8D3D7150277BB083002BF650 /* EditContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D714F277BB083002BF650 /* EditContactView.swift */; };
 		8D8E1ED6277A666A00B811DB /* NameTagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E1ED5277A666A00B811DB /* NameTagApp.swift */; };
 		8D8E1ED8277A666A00B811DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E1ED7277A666A00B811DB /* ContentView.swift */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		8D041906277C2CA5008236B8 /* DetailViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewComponent.swift; sourceTree = "<group>"; };
+		8D15C0B7277D68FB000E7ED1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8D15C0B9277D6D3D000E7ED1 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		8D15C0BB277D6D71000E7ED1 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		8D3D714F277BB083002BF650 /* EditContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactView.swift; sourceTree = "<group>"; };
 		8D8E1ED2277A666A00B811DB /* NameTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8E1ED5277A666A00B811DB /* NameTagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTagApp.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 			children = (
 				8D8E1EF5277A7CA800B811DB /* Contact.swift */,
 				8D8E1F00277A859700B811DB /* NameTagError.swift */,
+				8D15C0B7277D68FB000E7ED1 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -73,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8E1EFE277A80B300B811DB /* ContactsViewModel.swift */,
+				8D15C0BB277D6D71000E7ED1 /* DetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8E1EFB277A7FE800B811DB /* FileManager-DocumentsDirectory.swift */,
+				8D15C0B9277D6D3D000E7ED1 /* LocationFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,7 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8E1EFC277A7FE800B811DB /* FileManager-DocumentsDirectory.swift in Sources */,
+				8D15C0B8277D68FB000E7ED1 /* Location.swift in Sources */,
+				8D15C0BA277D6D3D000E7ED1 /* LocationFetcher.swift in Sources */,
 				8D041907277C2CA5008236B8 /* DetailViewComponent.swift in Sources */,
+				8D15C0BC277D6D71000E7ED1 /* DetailsViewModel.swift in Sources */,
 				8D8E1EF6277A7CA800B811DB /* Contact.swift in Sources */,
 				8D3D7150277BB083002BF650 /* EditContactView.swift in Sources */,
 				8D8E1EF9277A7F4F00B811DB /* ImagePicker.swift in Sources */,
@@ -336,6 +348,7 @@
 				DEVELOPMENT_TEAM = UZLGAARSJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location needed to set meeting place of your contact.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -365,6 +378,7 @@
 				DEVELOPMENT_TEAM = UZLGAARSJ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location needed to set meeting place of your contact.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

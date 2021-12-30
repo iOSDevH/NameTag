@@ -13,17 +13,18 @@ struct AddContactView: View {
     
     @State private var selectedImage: UIImage?
     @State private var name = ""
+    @State private var location: Location? = nil
     
     var body: some View {
         VStack {
-            DetailViewComponent(selectedImage: $selectedImage, name: $name)
+            DetailViewComponent(image: $selectedImage, name: $name, location: $location)
             
             Spacer()
         }
         .padding()
         .toolbar {
             Button {
-                try? contactsVM.addContact(name: name, image: selectedImage!)
+                try? contactsVM.addContact(name: name, image: selectedImage!, location: location)
                 dismiss()
             } label: {
                 Text("Save")

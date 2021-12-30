@@ -5,15 +5,20 @@
 //  Created by Heath Fashina on 2021-12-29.
 //
 
+import MapKit
 import SwiftUI
+import simd
 
 struct DetailViewComponent: View {
-    @Binding var selectedImage: UIImage?
+    @StateObject var detailsVM = Details()
+    
+    @Binding var image: UIImage?
     @Binding var name: String
+    @Binding var location: Location?
     
     var body: some View {
         VStack {
-            Image(uiImage: selectedImage ?? UIImage())
+            Image(uiImage: image ?? UIImage())
                 .resizable()
                 .scaledToFit()
                 .frame(maxHeight: 300)
@@ -24,6 +29,27 @@ struct DetailViewComponent: View {
                     RoundedRectangle(cornerRadius: 14)
                         .stroke(Color.blue, lineWidth: 2)
                 )
+            if location != nil {
+                ZStack {
+                    Map(coordinateRegion: $detailsVM.mapRegion, annotationItems: [location!]) { location in
+                        MapAnnotation(coordinate: location.coordinate) {
+                            VStack {
+                                Image(systemName: "star.circle")
+                                    .resizable()
+                                    .foregroundColor(.red)
+                                    .frame(width: 44, height: 44)
+                                    .background(.white)
+                                    .clipShape(Circle())
+                            }
+                        }
+                    }
+                }
+            }
+            
+            Button("Get Location") {
+                location = detailsVM.getUserLocation()
+                detailsVM.updateMapRegion(location: location)
+            }
         }
         .padding()
     }
@@ -33,6 +59,6 @@ struct DetailViewComponent_Previews: PreviewProvider {
     static let contact = Contacts.example
     
     static var previews: some View {
-        DetailViewComponent(selectedImage: .constant(contact.image), name: .constant(contact.name))
+        DetailViewComponent(image: .constant(contact.image), name: .constant(contact.name), location: .constant(contact.location))
     }
 }

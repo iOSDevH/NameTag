@@ -33,8 +33,8 @@ class Contacts: ObservableObject {
         
     }
     
-    func addContact(name: String, image: UIImage) throws {
-        let newContact = Contact(name: name)
+    func addContact(name: String, image: UIImage, location: Location?) throws {
+        let newContact = Contact(name: name, location: location)
         do {
             try FileManager().saveImage(newContact.id.uuidString, image: image)
             items.append(newContact)
@@ -91,5 +91,5 @@ class Contacts: ObservableObject {
         }
     }
     
-    static let example = Contact(name: "Test")
+    static let example = Contact(name: "Test", location: Location.example)
 }

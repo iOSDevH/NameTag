@@ -13,12 +13,13 @@ struct EditContactView: View {
     
     var selectedContact: Contact
     
-    @State var selectedImage: UIImage?
+    @State var image: UIImage?
     @State var name: String
+    @State var location: Location?
     
     var body: some View {
         VStack{
-            DetailViewComponent(selectedImage: .constant(selectedContact.image), name: $name)
+            DetailViewComponent(image: $image, name: $name, location: $location)
             
             Spacer()
             
@@ -42,10 +43,21 @@ struct EditContactView: View {
             }
         }
     }
+    
+    init(contact: Contact) {
+        self.selectedContact = contact
+        
+        _image = State(initialValue: contact.image)
+        _name = State(initialValue: contact.name)
+        _location = State(initialValue: contact.location)
+        
+    }
 }
 
 struct EditContactView_Previews: PreviewProvider {
+    static let contact = Contacts.example
+    
     static var previews: some View {
-        EditContactView(selectedContact: Contacts.example, name: Contacts.example.name)
+        EditContactView(contact: contact)
     }
 }

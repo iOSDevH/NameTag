@@ -10,6 +10,7 @@ import UIKit
 struct Contact: Identifiable, Comparable, Codable {
     var id = UUID()
     var name: String
+    var location: Location?
     
     var image: UIImage {
         do {
