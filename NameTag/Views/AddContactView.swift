@@ -29,6 +29,7 @@ struct AddContactView: View {
             } label: {
                 Text("Save")
             }
+            .disabled(selectedImage == nil || name == "")
         }
         .onAppear {
             contactsVM.showImagePicker = true

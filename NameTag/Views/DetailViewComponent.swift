@@ -18,7 +18,7 @@ struct DetailViewComponent: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: image ?? UIImage())
+            Image(uiImage: (image ?? UIImage(systemName: "photo.fill"))!)
                 .resizable()
                 .scaledToFit()
                 .frame(maxHeight: 300)
